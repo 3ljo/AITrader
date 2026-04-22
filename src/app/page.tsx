@@ -1,8 +1,14 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@/styles/aivora/animate.css";
+import "@/styles/aivora/fontawesome.css";
+import "@/styles/aivora/themify-icons.css";
+import "@/styles/aivora/main.css";
+
 import { LandingHeader } from "@/components/landing/header";
 import { LandingHero } from "@/components/landing/hero";
 import { LandingAbout } from "@/components/landing/about";
 import { LandingService } from "@/components/landing/service";
-import { LandingWhyUs } from "@/components/landing/why-us";
+import FeatureSection from "@/components/landing/aivora/FeatureSection";
 import { LandingFaq } from "@/components/landing/faq";
 import { LandingCta } from "@/components/landing/cta";
 import { LandingFooter } from "@/components/landing/footer";
@@ -15,7 +21,7 @@ export default function LandingPage() {
         <LandingHero />
         <LandingAbout />
         <LandingService />
-        <LandingWhyUs />
+        <FeatureSection />
         <LandingFaq />
         <LandingCta />
       </main>
