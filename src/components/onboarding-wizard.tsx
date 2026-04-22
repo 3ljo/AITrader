@@ -162,39 +162,42 @@ export function OnboardingWizard({ onComplete }: { onComplete: (profile: Trading
   }
 
   return (
-    <div className="mx-auto flex min-h-dvh w-full max-w-2xl flex-col px-4 py-6 sm:px-6">
-      <header className="mb-6 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-emerald-500 text-black">
-          <Sparkles className="h-5 w-5" />
-        </div>
-        <div>
-          <div className="text-base font-semibold tracking-tight">Welcome to SignalForge</div>
-          <div className="text-xs text-[color:var(--color-fg-dim)]">
-            6-step setup — shapes how the AI analyzes for you
+    <div className="sf-page-bg min-h-dvh">
+      <div className="mx-auto flex min-h-dvh w-full max-w-2xl flex-col px-4 py-8 sm:px-6 sm:py-12">
+        <header className="sf-anim-fade-up mb-8 flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-400 text-black shadow-[0_0_30px_-5px_rgba(34,211,238,0.6)]">
+            <Sparkles className="h-5 w-5" />
           </div>
-        </div>
-      </header>
+          <div>
+            <div className="sf-display text-lg tracking-tight">Welcome to SignalForge</div>
+            <div className="text-xs text-[color:var(--color-fg-dim)]">
+              6-step setup · shapes how the AI analyzes for you
+            </div>
+          </div>
+        </header>
 
-      <div className="mb-6">
-        <div className="mb-2 flex items-center justify-between text-xs">
-          <div className="flex items-center gap-2 text-[color:var(--color-fg-dim)]">
-            <span>Step {step + 1} of 6</span>
-            <span className="text-[color:var(--color-fg)]">— {STEPS[step].title}</span>
+        <div className="sf-anim-fade-up sf-delay-100 mb-8">
+          <div className="mb-2.5 flex items-center justify-between text-xs">
+            <div className="flex items-center gap-2">
+              <span className="text-[color:var(--color-fg-dim)]">Step {step + 1} of 6</span>
+              <span className="sf-display text-[color:var(--color-fg)]">{STEPS[step].title}</span>
+            </div>
+            <div className="text-[color:var(--color-fg-dim)]">{STEPS[step].hint}</div>
           </div>
-          <div className="text-[color:var(--color-fg-dim)]">{STEPS[step].hint}</div>
+          <div className="flex gap-1">
+            {STEPS.map((_, i) => (
+              <div
+                key={i}
+                className={cn(
+                  "h-1 flex-1 rounded-full transition-all duration-500",
+                  i <= step
+                    ? "bg-gradient-to-r from-cyan-400 to-emerald-400"
+                    : "bg-[color:var(--color-surface-2)]",
+                )}
+              />
+            ))}
+          </div>
         </div>
-        <div className="flex gap-1">
-          {STEPS.map((_, i) => (
-            <div
-              key={i}
-              className={cn(
-                "h-1 flex-1 rounded-full transition-all",
-                i <= step ? "bg-cyan-400" : "bg-[color:var(--color-surface-2)]",
-              )}
-            />
-          ))}
-        </div>
-      </div>
 
       <div className="flex-1">
         {step === 0 && (
@@ -557,6 +560,7 @@ export function OnboardingWizard({ onComplete }: { onComplete: (profile: Trading
             {submitting ? "Saving…" : "Finish setup"}
           </button>
         )}
+      </div>
       </div>
     </div>
   );

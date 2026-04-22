@@ -1,23 +1,54 @@
 @import "tailwindcss";
 
+/* ---- Fonts from the Aivora template ---- */
+@font-face {
+  font-family: "SportingGrotesque";
+  src: url("/fonts/SportingGrotesque-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SportingGrotesque";
+  src: url("/fonts/SportingGrotesque-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-bg: #0a0b0f;
-  --color-surface: #12141b;
-  --color-surface-2: #1a1d26;
-  --color-border: #262a36;
-  --color-fg: #e8ebf2;
-  --color-fg-dim: #8a93a6;
+  --color-bg: #06070b;
+  --color-bg-elevated: #0b0d14;
+  --color-surface: #10131c;
+  --color-surface-2: #181c28;
+  --color-surface-3: #222736;
+  --color-border: #242938;
+  --color-border-soft: #1b202c;
+  --color-fg: #edf0f7;
+  --color-fg-muted: #b5bccd;
+  --color-fg-dim: #7a8296;
+  --color-fg-faint: #50566a;
+
   --color-accent: #22d3ee;
+  --color-accent-soft: #67e8f9;
+  --color-accent-muted: rgba(34, 211, 238, 0.12);
+
   --color-buy: #22c55e;
+  --color-buy-soft: #4ade80;
   --color-sell: #ef4444;
+  --color-sell-soft: #f87171;
   --color-wait: #f59e0b;
+
+  --font-display: "SportingGrotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
 html,
 body {
   background: var(--color-bg);
   color: var(--color-fg);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
@@ -26,7 +57,169 @@ body {
   border-color: var(--color-border);
 }
 
-/* Hide number input spinners */
+/* ---- Global ambient gradient layer ---- */
+.sf-page-bg {
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(34, 211, 238, 0.09), transparent 70%),
+    radial-gradient(900px 600px at 100% 0%, rgba(139, 92, 246, 0.07), transparent 70%),
+    radial-gradient(700px 400px at 50% 100%, rgba(34, 197, 94, 0.05), transparent 70%),
+    var(--color-bg);
+}
+
+.sf-page-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/aivora/bg/noise.png");
+  background-size: 200px;
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.sf-page-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Card / surface treatments ---- */
+.sf-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(24, 28, 40, 0.8), rgba(16, 19, 28, 0.8));
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.sf-card-glow {
+  position: relative;
+  background: linear-gradient(180deg, rgba(24, 28, 40, 0.8), rgba(16, 19, 28, 0.8));
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.sf-card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.4), rgba(139, 92, 246, 0.15) 40%, transparent 70%);
+  border-radius: inherit;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.sf-card-glow:hover::before {
+  opacity: 1;
+}
+.sf-card-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Display typography ---- */
+.sf-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.sf-display-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.sf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+.sf-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+.sf-gradient-text {
+  background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 50%, #22c55e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Animations ---- */
+@keyframes sf-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes sf-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes sf-scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes sf-float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes sf-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes sf-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45); }
+  50%      { box-shadow: 0 0 0 12px rgba(34, 211, 238, 0); }
+}
+
+.sf-anim-fade-up { animation: sf-fade-up 0.7s ease-out both; }
+.sf-anim-fade-in { animation: sf-fade-in 0.8s ease-out both; }
+.sf-anim-scale-in { animation: sf-scale-in 0.5s ease-out both; }
+.sf-float { animation: sf-float 4s ease-in-out infinite; }
+.sf-pulse { animation: sf-pulse-glow 2s ease-in-out infinite; }
+.sf-delay-100 { animation-delay: 0.1s; }
+.sf-delay-200 { animation-delay: 0.2s; }
+.sf-delay-300 { animation-delay: 0.3s; }
+.sf-delay-400 { animation-delay: 0.4s; }
+.sf-delay-500 { animation-delay: 0.5s; }
+.sf-delay-600 { animation-delay: 0.6s; }
+
+/* ---- Noise overlay utility ---- */
+.sf-noise {
+  position: relative;
+}
+.sf-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/aivora/bg/noise.png");
+  background-size: 180px;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ---- Number input spinners off ---- */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -36,13 +229,13 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* Custom scrollbar */
+/* ---- Scrollbar ---- */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-surface-2);
@@ -50,5 +243,11 @@ input[type="number"] {
   border: 2px solid var(--color-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-border);
+  background: var(--color-surface-3);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--color-accent);
+  color: #000;
 }

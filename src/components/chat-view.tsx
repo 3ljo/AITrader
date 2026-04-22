@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ImagePlus, Loader2, Send, Wrench, X } from "lucide-react";
+import { ImagePlus, Loader2, Send, Sparkles, Wrench, X } from "lucide-react";
 import { SignalCard } from "@/components/signal-card";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { fileToCompressedDataUrl } from "@/lib/image-utils";
 import { STRATEGY_INFO, type Signal, type StrategyStyle, type TradingProfile, type TradingStrategy } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -186,19 +187,25 @@ export function ChatView({
         className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-4 overflow-y-auto px-4 py-4 sm:px-6"
       >
         {entries.length === 0 && (
-          <div className="m-auto w-full max-w-lg rounded-xl border border-dashed border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 text-center">
-            <div className="text-sm font-medium">Ask for a trade signal — or drop a chart screenshot.</div>
-            <div className="mt-1 text-xs text-[color:var(--color-fg-dim)]">
-              Try: <span className="font-mono">"BTC"</span> ·{" "}
-              <span className="font-mono">"signal on EURUSD"</span> · or paste / drop a chart image
+          <div className="m-auto w-full max-w-2xl text-center sf-anim-fade-up">
+            <div className="flex justify-center">
+              <Eyebrow>Ready when you are</Eyebrow>
             </div>
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <h1 className="sf-display mt-5 text-3xl leading-[1.05] tracking-tight sm:text-5xl">
+              Ask your AI analyst <span className="sf-gradient-text">anything</span>
+            </h1>
+            <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[color:var(--color-fg-muted)]">
+              Type a pair, paste or drop a chart screenshot, or tap a quick pick below.
+              Every analysis respects your profile and risk rules.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-2">
               {quickPairs.map((p) => (
                 <button
                   key={p}
                   onClick={() => submit(`Signal on ${p}`)}
-                  className="rounded-md border border-[color:var(--color-border)] bg-[color:var(--color-surface-2)] px-3 py-1 font-mono text-xs hover:border-cyan-400 hover:text-cyan-400"
+                  className="group inline-flex items-center gap-2 rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)]/60 px-4 py-2 font-mono text-xs text-[color:var(--color-fg)] backdrop-blur transition-all hover:-translate-y-0.5 hover:border-cyan-500/50 hover:text-cyan-300"
                 >
+                  <Sparkles className="h-3 w-3 text-[color:var(--color-fg-dim)] transition-colors group-hover:text-cyan-400" />
                   {p}
                 </button>
               ))}

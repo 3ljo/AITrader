@@ -22,3 +22,6 @@ data/
 
 # claude code local settings
 .claude/
+
+# reference template (assets imported selectively into public/)
+aivora-react-template/

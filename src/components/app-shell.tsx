@@ -45,7 +45,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-dvh">
+    <div className="sf-page-bg flex min-h-dvh">
       <Sidebar profile={profile} />
       <div className="flex min-w-0 flex-1 flex-col pb-16 md:pb-0">
         <Topbar profile={profile} />

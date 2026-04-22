@@ -9,26 +9,29 @@ const VERDICT_STYLE = {
   BUY: {
     label: "BUY",
     icon: TrendingUp,
-    bg: "bg-green-500/10",
-    border: "border-green-500/40",
-    text: "text-green-400",
-    pill: "bg-green-500 text-black",
+    glow: "rgba(34,197,94,0.3)",
+    border: "border-emerald-500/40",
+    text: "text-emerald-400",
+    pill: "bg-emerald-500 text-black shadow-[0_0_20px_-5px_rgba(34,197,94,0.8)]",
+    accent: "from-emerald-500/15",
   },
   SELL: {
     label: "SELL",
     icon: TrendingDown,
-    bg: "bg-red-500/10",
+    glow: "rgba(239,68,68,0.3)",
     border: "border-red-500/40",
     text: "text-red-400",
-    pill: "bg-red-500 text-black",
+    pill: "bg-red-500 text-black shadow-[0_0_20px_-5px_rgba(239,68,68,0.8)]",
+    accent: "from-red-500/15",
   },
   WAIT: {
     label: "WAIT — NO SETUP",
     icon: MinusCircle,
-    bg: "bg-amber-500/10",
+    glow: "rgba(245,158,11,0.25)",
     border: "border-amber-500/40",
     text: "text-amber-400",
-    pill: "bg-amber-500 text-black",
+    pill: "bg-amber-500 text-black shadow-[0_0_20px_-5px_rgba(245,158,11,0.7)]",
+    accent: "from-amber-500/10",
   },
 } as const;
 
@@ -60,17 +63,29 @@ export function SignalCard({
   const isWait = signal.verdict === "WAIT";
 
   return (
-    <div className={cn("rounded-xl border p-5 sm:p-6", style.bg, style.border)}>
-      <div className="flex flex-wrap items-start justify-between gap-3">
+    <div
+      className={cn(
+        "sf-noise relative overflow-hidden rounded-2xl border p-5 sm:p-6",
+        style.border,
+      )}
+      style={{
+        background: `linear-gradient(180deg, ${style.glow.replace(/0\.\d+/, "0.08")} 0%, rgba(16,19,28,0.9) 60%)`,
+      }}
+    >
+      <div
+        className="pointer-events-none absolute -top-20 -right-20 h-60 w-60 rounded-full opacity-40 blur-3xl"
+        style={{ background: `radial-gradient(circle, ${style.glow}, transparent 70%)` }}
+      />
+      <div className="relative flex flex-wrap items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className={cn("flex h-10 w-10 items-center justify-center rounded-lg", style.pill)}>
+          <div className={cn("flex h-11 w-11 items-center justify-center rounded-xl", style.pill)}>
             <Icon className="h-5 w-5" />
           </div>
           <div>
-            <div className="text-xs uppercase tracking-wider text-[color:var(--color-fg-dim)]">Signal</div>
+            <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--color-fg-dim)]">Signal</div>
             <div className="flex items-center gap-2">
-              <span className="text-lg font-semibold">{signal.pair}</span>
-              <span className={cn("rounded-md px-2 py-0.5 text-xs font-bold", style.pill)}>{style.label}</span>
+              <span className="sf-display text-2xl tracking-tight">{signal.pair}</span>
+              <span className={cn("rounded-md px-2 py-0.5 text-[10px] font-bold", style.pill)}>{style.label}</span>
             </div>
           </div>
         </div>
@@ -205,15 +220,15 @@ function PriceCell({
   variant?: "buy" | "sell";
 }) {
   return (
-    <div className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-2)] p-3">
-      <div className="flex items-center justify-between text-xs text-[color:var(--color-fg-dim)]">
+    <div className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-2)]/60 p-3.5 backdrop-blur-sm">
+      <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.18em] text-[color:var(--color-fg-dim)]">
         <span>{label}</span>
-        {hint && <span className="uppercase tracking-wide">{hint}</span>}
+        {hint && <span className="text-emerald-400">{hint}</span>}
       </div>
       <div
         className={cn(
-          "mt-1 font-mono text-base font-semibold",
-          variant === "buy" && "text-green-400",
+          "mt-1.5 font-mono text-lg font-semibold tracking-tight",
+          variant === "buy" && "text-emerald-400",
           variant === "sell" && "text-red-400",
         )}
       >
