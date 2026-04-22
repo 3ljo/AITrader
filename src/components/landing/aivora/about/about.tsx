@@ -28,17 +28,17 @@ const AboutSection: React.FC = () => {
     <section className="about pt-140">
       <div className="container">
         <div className="sec-title about-sec-title mb-75">
-          <span className="sub-title">Who We are?</span>
+          <span className="sub-title">Who We Are</span>
           <h2 className="title">
-            We helping
+            We help traders
             <span>
               <img src={gif1} alt="animation" />
             </span>{" "}
-            grow businesses and
+            find real setups and
             <span>
               <img src={gif2} alt="animation" />
             </span>
-            scale with smart, data-driven AI agency{" "}
+            grow accounts with AI-driven signals{" "}
             <span>
               <img src={gif3} alt="animation" />
             </span>

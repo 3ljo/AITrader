@@ -67,71 +67,43 @@ const Header: React.FC = () => {
             <div className="main-menu__wrap navbar navbar-expand-lg p-0">
               <nav className="main-menu collapse navbar-collapse">
                 <ul>
-                  <li className="menu-item-has-children active">
+                  <li className="active">
                     <Link href="/" onClick={handleClick}>
                       <span>Home</span>
                     </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link href="/" onClick={handleClick}>
-                          <span>Ai Agency</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/ai-marketing" onClick={handleClick}>
-                          <span>Ai Marketing</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/ai-chatbot" onClick={handleClick}>
-                          <span>Ai Chatbot</span>
-                        </Link>
-                      </li>
-                    </ul>
                   </li>
 
-                  <li>
-                    <Link href="/about" onClick={handleClick}>
-                      <span>About Us</span>
-                    </Link>
-                  </li>
-
-                  {/* MegaMenu */}
+                  {/* MegaMenu — Product */}
                   <li className="menu-item-has-children megamenu">
                     <Link href="#" onClick={handleClick}>
-                      <span>Pages</span>
+                      <span>Product</span>
                     </Link>
                     <MegaMenu1 />
                   </li>
 
+                  {/* MegaMenu — Features */}
                   <li className="menu-item-has-children megamenu">
                     <Link href="#" onClick={handleClick}>
-                      <span>Services</span>
+                      <span>Features</span>
                     </Link>
                     <MegaMenuServices />
                   </li>
 
-                  <li className="menu-item-has-children">
-                    <Link href="/blog" onClick={handleClick}>
-                      <span>Blog</span>
+                  <li>
+                    <Link href="/chat" onClick={handleClick}>
+                      <span>Chat</span>
                     </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link href="/blog" onClick={handleClick}>
-                          <span>Blog</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/blog-details" onClick={handleClick}>
-                          <span>Blog Details</span>
-                        </Link>
-                      </li>
-                    </ul>
                   </li>
 
                   <li>
-                    <Link href="/contact" onClick={handleClick}>
-                      <span>Contact Us</span>
+                    <Link href="/scanner" onClick={handleClick}>
+                      <span>Scanner</span>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link href="/alerts" onClick={handleClick}>
+                      <span>Alerts</span>
                     </Link>
                   </li>
                 </ul>
@@ -140,8 +112,8 @@ const Header: React.FC = () => {
 
             {/* Button */}
             <div className="header-btn">
-              <Link href="/contact" className="thm-btn" onClick={handleClick}>
-                Join Now
+              <Link href="/chat" className="thm-btn" onClick={handleClick}>
+                Launch App
               </Link>
             </div>
 

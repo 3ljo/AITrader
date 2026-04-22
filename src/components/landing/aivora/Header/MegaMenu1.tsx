@@ -25,109 +25,106 @@ const MegaMenu1: React.FC = () => {
                   <div className="megamenu_pages_wrapper">
                     <div className="row g-10">
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" href="/service">
+                        <Link className="iconbox_block_2" href="/chat">
                           <span className="icon_title_wrap">
                             <small className="iconbox_icon">
-                              <img src={icon1} alt="Service Icon" />
+                              <img src={icon1} alt="Chat Icon" />
                             </small>
-                            <small className="iconbox_title">Services</small>
+                            <small className="iconbox_title">AI Chat</small>
                           </span>
                           <span className="description mb-0">
-                            Happy to help you!
+                            Ask any pair, get a full trade plan.
                           </span>
                         </Link>
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link
-                          className="iconbox_block_2"
-                          href="/service-details"
-                        >
+                        <Link className="iconbox_block_2" href="/chat">
                           <span className="icon_title_wrap">
                             <small className="iconbox_icon">
-                              <img src={icon1} alt="Service Details Icon" />
+                              <img src={icon1} alt="Chart Analysis Icon" />
                             </small>
                             <small className="iconbox_title">
-                              Service details
+                              Chart Analysis
                             </small>
                           </span>
                           <span className="description mb-0">
-                            Happy to help you!
+                            Drop a screenshot, get a real read.
                           </span>
                         </Link>
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" href="/career">
+                        <Link className="iconbox_block_2" href="/scanner">
                           <span className="icon_title_wrap">
                             <span className="iconbox_icon">
-                              <img src={icon3} alt="Career Icon" />
+                              <img src={icon3} alt="Scanner Icon" />
                             </span>
-                            <small className="iconbox_title">Career</small>
-                            <span className="badge">We’re Hiring</span>
+                            <small className="iconbox_title">Scanner</small>
+                            <span className="badge">Hot</span>
                           </span>
                           <span className="description mb-0">
-                            Open jobs to join our team.
+                            Scan your watchlist in one click.
                           </span>
                         </Link>
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" href="/career-details">
+                        <Link className="iconbox_block_2" href="/alerts">
                           <span className="icon_title_wrap">
                             <span className="iconbox_icon">
-                              <img src={icon2} alt="Career Details Icon" />
+                              <img src={icon2} alt="Alerts Icon" />
                             </span>
                             <small className="iconbox_title">
-                              Career details
+                              Alerts
                             </small>
                           </span>
                           <span className="description mb-0">
-                            We are friendly — join our team.
+                            Telegram pings when setups fire.
                           </span>
                         </Link>
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" href="/project">
+                        <Link className="iconbox_block_2" href="/calendar">
                           <span className="icon_title_wrap">
                             <span className="iconbox_icon">
-                              <img src={icon3} alt="Project Icon" />
+                              <img src={icon3} alt="Calendar Icon" />
                             </span>
-                            <small className="iconbox_title">Project</small>
+                            <small className="iconbox_title">Calendar</small>
                           </span>
                           <span className="description mb-0">
-                            Explore our all case studies.
+                            Red-folder news that moves markets.
                           </span>
                         </Link>
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" href="/project-details">
+                        <Link className="iconbox_block_2" href="/settings">
                           <span className="icon_title_wrap">
                             <span className="iconbox_icon">
-                              <img src={icon3} alt="Project Details Icon" />
+                              <img src={icon3} alt="Settings Icon" />
                             </span>
                             <small className="iconbox_title">
-                              Project details
+                              Settings
                             </small>
                           </span>
                           <span className="description mb-0">
-                            Explore our all case studies.
+                            Profile, risk, strategy, Telegram.
                           </span>
                         </Link>
                       </div>
 
                       <div className="col-xl-4 col-lg-4">
-                        <Link className="iconbox_block_2" href="/team">
+                        <Link className="iconbox_block_2" href="/settings">
                           <span className="icon_title_wrap">
                             <span className="iconbox_icon">
-                              <img src={icon4} alt="Team Icon" />
+                              <img src={icon4} alt="Strategies Icon" />
                             </span>
-                            <small className="iconbox_title">Our team</small>
+                            <small className="iconbox_title">Strategies</small>
                           </span>
                           <span className="description mb-0">
-                            We are friendly — join our team.
+                            SMC, RSI, Supply &amp; Demand, more.
                           </span>
                         </Link>
                       </div>
@@ -137,7 +134,7 @@ const MegaMenu1: React.FC = () => {
                     <ul className="btns_group mt-80 p-0 ul_li_between">
                       <li>
                         <Link className="thm-btn agency-btn megamenu-btn" href="/contact">
-                          <span className="text">Get free consultation</span>
+                          <span className="text">Start analyzing free</span>
                           <span className="arrow">
                             <span className="arrow-icon">
                               <svg
@@ -330,10 +327,10 @@ const MegaMenu1: React.FC = () => {
                       </div>
                       <div className="author_box_content">
                         <h3 className="mb-60 text-white">
-                          Looking for custom AI solutions tailored to you?
+                          Tired of staring at charts all day? Let the AI watch them for you.
                         </h3>
                         <Link className="thm-btn agency-btn megamenu-btn" href="/contact">
-                          <span className="text">Contact us now</span>
+                          <span className="text">Launch the app</span>
                           <span className="arrow">
                             <span className="arrow-icon">
                               <svg
@@ -477,16 +474,17 @@ const MegaMenu1: React.FC = () => {
                       </div>
                       <div className="author_box_content">
                         <p className="mb-45 text-white">
-                          “As CEO of Telligy, I’ve focused on clarity,
-                          efficiency, and results — turning ideas into real
-                          value without reinventing the wheel.”
+                          &ldquo;One AI call writes the trade plan. A free
+                          monitor waits for the market to actually do it. You
+                          show up only when there&apos;s a real setup.&rdquo;
                         </p>
                         <div className="author_holder">
                           <h4 className="author_name text-white">
-                            Sebastian Patel
+                            The SignalForge Loop
                           </h4>
                           <span className="author_designation text-white">
-                            CEO & Chairman at, <Link href="/">Aivora</Link>
+                            How we think about trading at,{" "}
+                            <Link href="/">SignalForge</Link>
                           </span>
                         </div>
                       </div>

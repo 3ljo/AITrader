@@ -25,9 +25,9 @@ const FeatureSection: React.FC = () => {
       <section className="feature pt-145">
         <div className="container">
           <div className="sec-title sec-title-center fea-sec-title text-center mb-50">
-            <span className="sub-title">Why Should Choose Us</span>
+            <span className="sub-title">Why Choose SignalForge</span>
             <h2 className="title">
-              Your success{" "}
+              Your edge{" "}
               <span>
                 <img src={diamondIcon} alt="icon" />
               </span>{" "}
@@ -46,7 +46,7 @@ const FeatureSection: React.FC = () => {
                 >
                   <div className="xb-item--inner justify-content-end xb-border">
                     <h2 className="xb-item--title text-end">
-                      Secure, ethical & <br /> scalable AI
+                      Strategy-aware <br /> AI analysis
                     </h2>
                     <span className="xb-item--icon">
                       <img src={feaIcon01} alt="icon" />
@@ -61,7 +61,7 @@ const FeatureSection: React.FC = () => {
                 >
                   <div className="xb-item--inner justify-content-end xb-border">
                     <h2 className="xb-item--title text-end">
-                      Custom-built <br /> solutions that fit you
+                      Custom-built <br /> trade plans for you
                     </h2>
                     <span className="xb-item--icon">
                       <img src={feaIcon02} alt="icon" />
@@ -76,7 +76,7 @@ const FeatureSection: React.FC = () => {
                 >
                   <div className="xb-item--inner justify-content-end xb-border">
                     <h2 className="xb-item--title text-end">
-                      Secure, ethical, and <br /> responsible AI
+                      Risk-first <br /> by design
                     </h2>
                     <span className="xb-item--icon">
                       <img src={feaIcon03} alt="icon" />
@@ -99,7 +99,7 @@ const FeatureSection: React.FC = () => {
                       <img src={feaIcon04} alt="icon" />
                     </span>
                     <h2 className="xb-item--title">
-                      Expert team of AI <br /> specialists
+                      Expert-grade <br /> AI reasoning
                     </h2>
                   </div>
                 </div>
@@ -116,6 +116,7 @@ const FeatureSection: React.FC = () => {
                     <h2 className="xb-item--title">
                       Speed without <br /> sacrificing quality
                     </h2>
+                    {/* intentionally kept — applies to trading too */}
                   </div>
                 </div>
 
@@ -129,7 +130,7 @@ const FeatureSection: React.FC = () => {
                       <img src={feaIcon06} alt="icon" />
                     </span>
                     <h2 className="xb-item--title">
-                      Client-centered, <br /> business-focused
+                      Trader-centered, <br /> setup-focused
                     </h2>
                   </div>
                 </div>

@@ -25,15 +25,15 @@ const MegaMenuServices: React.FC = () => {
                           <div className="megamenu_widget">
                             <ul className="icon_list unordered_list_block">
                               {[
-                                "AI saas product.",
-                                "Data and intelligence.",
-                                "AI for E-commerce.",
-                                "AI consulting.",
-                              ].map((text, index) => (
+                                { text: "Price Action.", href: "/chat" },
+                                { text: "Smart Money (SMC).", href: "/chat" },
+                                { text: "Supply & Demand.", href: "/chat" },
+                                { text: "RSI / Momentum.", href: "/chat" },
+                              ].map((item, index) => (
                                 <li key={index}>
-                                  <Link href="/service-details">
+                                  <Link href={item.href}>
                                     <span className="icon_list_text">
-                                      {text}
+                                      {item.text}
                                     </span>
                                   </Link>
                                 </li>
@@ -47,15 +47,15 @@ const MegaMenuServices: React.FC = () => {
                           <div className="megamenu_widget">
                             <ul className="icon_list unordered_list_block">
                               {[
-                                "AI chatbot virtual.",
-                                "AI - marketing.",
-                                "Machine learning.",
-                                "AI integration.",
-                              ].map((text, index) => (
+                                { text: "Chart screenshot analysis.", href: "/chat" },
+                                { text: "Watchlist scanner.", href: "/scanner" },
+                                { text: "Telegram alerts.", href: "/alerts" },
+                                { text: "Economic calendar.", href: "/calendar" },
+                              ].map((item, index) => (
                                 <li key={index}>
-                                  <Link href="/service-details">
+                                  <Link href={item.href}>
                                     <span className="icon_list_text">
-                                      {text}
+                                      {item.text}
                                     </span>
                                   </Link>
                                 </li>
@@ -117,13 +117,13 @@ const MegaMenuServices: React.FC = () => {
                                   <img src={m05} alt="icon" />
                                 </span>
                                 <h3 className="xb-item--title">
-                                  <Link href="/contact">
-                                    Need any custom AI services.
+                                  <Link href="/chat">
+                                    Ready to analyze a pair?
                                   </Link>
                                 </h3>
                               </div>
                               <p className="xb-item--text">
-                                Discover our core offerings.
+                                Launch the AI analyst in one click.
                               </p>
                             </div>
 
@@ -277,13 +277,13 @@ const MegaMenuServices: React.FC = () => {
                         <img src={serviceImg} alt="AI Service" />
                       </div>
                       <div className="xb-item--holder">
-                        <h3 className="xb-item--title">General AI projects..</h3>
+                        <h3 className="xb-item--title">Built for real trading.</h3>
                         <p className="xb-item--text">
-                          We deliver AI solutions that streamline operations and
-                          boost efficiency.
+                          Live market data, risk-first sizing, Telegram alerts —
+                          everything designed for the way traders actually work.
                         </p>
-                        <Link className="thm-btn agency-btn megamenu-btn" href="/project">
-                          <span className="text">read more project</span>
+                        <Link className="thm-btn agency-btn megamenu-btn" href="/chat">
+                          <span className="text">Open the app</span>
                           <span className="arrow">
                             <span className="arrow-icon">
                               <svg

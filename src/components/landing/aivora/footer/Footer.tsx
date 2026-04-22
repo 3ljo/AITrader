@@ -122,42 +122,42 @@ const Footer: React.FC = () => {
       <div className="xb-footer-wrap">
         {/* Footer Heading */}
         <div className="xb-footer-heading wow zoomIn" data-wow-delay="0ms" data-wow-duration="600ms">
-          <h1 className="title">Aivora</h1>
-          <a className="mail" href="mailto:aivora@domain.com">
-            <img src={emailIcon} alt="email" /> aivora@domain.com
+          <h1 className="title">SignalForge</h1>
+          <a className="mail" href="mailto:hello@signalforge.app">
+            <img src={emailIcon} alt="email" /> hello@signalforge.app
           </a>
         </div>
 
         {/* Footer Navigation */}
         <div className="xb-footer-nav">
           <div className="xb-footer-nav-item">
-            <span className="sub-title">What we do?</span>
+            <span className="sub-title">Ask the AI</span>
             <h2 className="title">
-              <Link href="/service">Services</Link>
+              <Link href="/chat">Chat</Link>
             </h2>
           </div>
           <div className="xb-footer-nav-item">
-            <span className="sub-title">Who we are?</span>
+            <span className="sub-title">Find setups</span>
             <h2 className="title">
-              <Link href="/about">About us</Link>
+              <Link href="/scanner">Scanner</Link>
             </h2>
           </div>
           <div className="xb-footer-nav-item">
-            <span className="sub-title">How we deliver</span>
+            <span className="sub-title">Get pinged</span>
             <h2 className="title">
-              <Link href="/contact">Contact us</Link>
+              <Link href="/alerts">Alerts</Link>
             </h2>
           </div>
           <div className="xb-footer-nav-item">
-            <span className="sub-title">What we're good at?</span>
+            <span className="sub-title">News that moves</span>
             <h2 className="title">
-              <Link href="/project">Our project</Link>
+              <Link href="/calendar">Calendar</Link>
             </h2>
           </div>
           <div className="xb-footer-nav-item">
-            <span className="sub-title">News?</span>
+            <span className="sub-title">Configure</span>
             <h2 className="title">
-              <Link href="/blog">News</Link>
+              <Link href="/settings">Settings</Link>
             </h2>
           </div>
         </div>
@@ -188,21 +188,21 @@ const Footer: React.FC = () => {
         <div className="xb-footer-bottom">
           <div className="contact-item">
             <img src={locationIcon} alt="location" />
-            <span className="contact-method">4517 Washington, USA</span>
+            <span className="contact-method">Local-first · Your data stays yours</span>
           </div>
 
           <div className="contact-item copyright-item">
             <p>
-              Copyright © 2025 <Link href="/">Aivora</Link>, All rights reserved.
+              Copyright © {new Date().getFullYear()} <Link href="/">SignalForge</Link>. AI analysis, not financial advice.
             </p>
           </div>
 
           <div className="contact-item">
-            <a href="tel:+112304528597">
-              <img src={callIcon} alt="call" />
+            <a href="/chat">
+              <img src={callIcon} alt="open" />
             </a>
-            <a className="contact-method" href="tel:+112304528597">
-              +(1)1230 452 8597
+            <a className="contact-method" href="/chat">
+              Open the app
             </a>
           </div>
         </div>

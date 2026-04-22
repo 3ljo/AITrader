@@ -25,45 +25,45 @@ interface ServiceItem {
 const services: ServiceItem[] = [
   {
     id: 1,
-    title: "AI SaaS Product",
-    desc: "Use AI to target audiences, personalize campaigns, and analyze data for better engagement and results.",
+    title: "AI Signal Engine",
+    desc: "Type any pair. gpt-4.1 pulls live candles, runs multi-timeframe analysis, and returns a structured trade plan — entry, SL, TPs, position sizing, full reasoning.",
     img: img01,
-    link: "/service-details",
+    link: "/chat",
   },
   {
     id: 2,
-    title: "Data Science",
-    desc: "We turn complex data into clear, actionable insights using AI and advanced analytics—empowering smarter decisions.",
+    title: "Chart Screenshot Analysis",
+    desc: "Drop any TradingView screenshot. The AI reads your trendlines, marked zones, and candles — then overlays live data to confirm or reject your thesis.",
     img: img02,
-    link: "/service-details",
+    link: "/chat",
   },
   {
     id: 3,
-    title: "AI Chatbot Virtual",
-    desc: "We create intelligent chatbots and virtual assistants that improve customer support and automate interactions 24/7.",
+    title: "Watchlist Scanner",
+    desc: "One click runs the AI across your whole watchlist — crypto, forex, metals, indices. Ranks findings by confidence. Only spends tokens when you click.",
     img: img03,
-    link: "/service-details",
+    link: "/scanner",
   },
   {
     id: 4,
-    title: "AI for E-commerce",
-    desc: "We enhance e-commerce with AI-powered, dynamic pricing, and personalized customer experiences.",
+    title: "Telegram Alerts",
+    desc: "Save any trigger and the monitor watches live prices every 60 seconds. Zero AI tokens. Phone pings the instant your conditions hit — even when the app is closed.",
     img: img04,
-    link: "/service-details",
+    link: "/alerts",
   },
   {
     id: 5,
-    title: "AI Consulting",
-    desc: "We guide businesses in adopting AI strategies, optimizing processes, and integrating technologies for lasting success.",
+    title: "Economic Calendar",
+    desc: "Red-folder news countdowns auto-filtered to your traded currencies. Know what's about to move the market before you take a position.",
     img: img05,
-    link: "/service-details",
+    link: "/calendar",
   },
   {
     id: 6,
-    title: "AI Marketing",
-    desc: "Use AI to target audiences, personalize campaigns, and analyze data for better engagement and results.",
+    title: "Strategy-Aware Analysis",
+    desc: "SMC, Supply & Demand, RSI, MA Trend, Fibonacci, and more. Pick your methodology — the AI analyzes through your lens with the right vocabulary.",
     img: img06,
-    link: "/service-details",
+    link: "/settings",
   },
 ];
 
@@ -81,16 +81,16 @@ const ServiceSection: React.FC = () => {
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="sec-title custom-sec-title xb-sec-padding text-center">
-              <span className="sub-title">Our Main Services</span>
+              <span className="sub-title">What SignalForge Does</span>
               <h2 className="title">
                 <span className="round-img">
                   <img src={gif} alt="gif" />
                 </span>{" "}
-                Helping you grow with the power of AI
+                Helping you trade smarter with AI
               </h2>
               <div className="xb-heading-btn d-inline">
-                <Link className="thm-btn agency-btn" href="/service">
-                  <span className="text">view more services</span>
+                <Link className="thm-btn agency-btn" href="/chat">
+                  <span className="text">Open the app</span>
                   <span className="arrow">
                     <span className="arrow-icon">
                       <svg

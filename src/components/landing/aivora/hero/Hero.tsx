@@ -22,16 +22,17 @@ const HeroSection: React.FC = () => {
           <div className="col-lg-9 col-md-9">
             <div className="hero-content">
               <h2 className="title scale-animation wow">
-                Empower your business with smarter AI agency
+                Stop staring at charts. Get pinged when the setup is real.
               </h2>
               <p className="sub-title scale-animation wow">
-                Unlock growth and efficiency with tailored AI solutions. We use
-                automation and data-driven strategies to help you innovate and
-                scale.
+                SignalForge is your personal AI trading analyst. Ask for any pair,
+                upload a chart, or scan your watchlist &mdash; the AI writes a full
+                trade plan that respects your risk rules, then pings you on Telegram
+                the moment the market fires it.
               </p>
               <div className="hero-btn scale-animation wow">
-                <Link className="thm-btn agency-btn" href="/about">
-                  <span className="text">Begin Today with us</span>
+                <Link className="thm-btn agency-btn" href="/chat">
+                  <span className="text">Start analyzing free</span>
                   <span className="arrow">
                     <span className="arrow-icon">
                       <svg
@@ -194,10 +195,10 @@ const HeroSection: React.FC = () => {
                   <img src={featureIcon1} alt="icon" />
                 </span>
                 <div className="xb-item--holder">
-                  <h2 className="xb-item--title">Smarter insights</h2>
+                  <h2 className="xb-item--title">Smarter signals</h2>
                   <p className="xb-item--content">
-                    Make faster, data-driven decisions powered by real-time AI
-                    analysis and prediction.
+                    Multi-timeframe analysis across your pairs. The AI writes a full
+                    trade plan &mdash; entry, SL, TPs, sizing.
                   </p>
                 </div>
               </div>
@@ -215,10 +216,10 @@ const HeroSection: React.FC = () => {
                   <img src={featureIcon2} alt="icon" />
                 </span>
                 <div className="xb-item--holder">
-                  <h2 className="xb-item--title">Integrated AI solutions</h2>
+                  <h2 className="xb-item--title">Free Telegram alerts</h2>
                   <p className="xb-item--content">
-                    No extra tools or plugins needed. Get built-in, scalable AI
-                    from day one.
+                    Save any trigger. The monitor watches prices 24/7 at zero AI
+                    cost and pings you when your setup fires.
                   </p>
                 </div>
               </div>
@@ -236,10 +237,10 @@ const HeroSection: React.FC = () => {
                   <img src={featureIcon3} alt="icon" />
                 </span>
                 <div className="xb-item--holder">
-                  <h2 className="xb-item--title">End-to-end automation</h2>
+                  <h2 className="xb-item--title">Risk-first by design</h2>
                   <p className="xb-item--content">
-                    Eliminate bottlenecks with intelligent workflows that never
-                    leave you guessing.
+                    Every signal respects your per-trade cap and prop-firm rules.
+                    No hero plays, no account-blowing setups.
                   </p>
                 </div>
               </div>
