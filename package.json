@@ -17,6 +17,7 @@
     "openai": "^4.77.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-fast-marquee": "^1.6.5",
     "tailwind-merge": "^2.5.5",
     "yahoo-finance2": "2.13.3",
     "zod": "^3.24.0"

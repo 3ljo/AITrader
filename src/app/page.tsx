@@ -4,28 +4,26 @@ import "@/styles/aivora/fontawesome.css";
 import "@/styles/aivora/themify-icons.css";
 import "@/styles/aivora/main.css";
 
-import { LandingHeader } from "@/components/landing/header";
-import { LandingHero } from "@/components/landing/hero";
-import { LandingAbout } from "@/components/landing/about";
-import { LandingService } from "@/components/landing/service";
+import Header from "@/components/landing/aivora/Header/Header";
+import HeroSection from "@/components/landing/aivora/hero/Hero";
+import AboutSection from "@/components/landing/aivora/about/about";
+import ServiceSection from "@/components/landing/aivora/ServiceSection/ServiceSection";
 import FeatureSection from "@/components/landing/aivora/FeatureSection";
-import { LandingFaq } from "@/components/landing/faq";
-import { LandingCta } from "@/components/landing/cta";
-import { LandingFooter } from "@/components/landing/footer";
+import Footer from "@/components/landing/aivora/footer/Footer";
 
 export default function LandingPage() {
   return (
-    <div className="sf-page-bg min-h-dvh overflow-x-hidden">
-      <LandingHeader />
-      <main>
-        <LandingHero />
-        <LandingAbout />
-        <LandingService />
-        <FeatureSection />
-        <LandingFaq />
-        <LandingCta />
-      </main>
-      <LandingFooter />
+    <div className="ai-agency">
+      <div className="body_wrap o-clip">
+        <Header />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ServiceSection />
+          <FeatureSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
